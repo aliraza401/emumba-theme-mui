@@ -35,7 +35,9 @@ const baseTheme = {
       },
     },
   },
-  ...typography,
+  typography: {
+    fontFamily: "DM Sans",
+  },
 };
 
 const lightTheme = createTheme({

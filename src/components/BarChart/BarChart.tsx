@@ -30,11 +30,16 @@ const BarChart: FC<BarChartProps> = () => {
         >
           <XAxis
             dataKey="name"
-            // tick={{ fontSize: 14 }}
+            tick={{ fontSize: 14 }}
             axisLine={false}
             tickLine={false}
           />
-          <YAxis domain={[0, 500]} axisLine={false} tickLine={false} />
+          <YAxis
+            domain={[0, 500]}
+            tick={{ fontSize: 14 }}
+            axisLine={false}
+            tickLine={false}
+          />
           <Tooltip />
           {/* <Legend
             layout="horizontal"
