@@ -129,32 +129,24 @@ In this example, the Layout component takes children as a prop and renders them 
 
 This repository utilizes the power of `styled-components` for styling components. `styled-components` allows you to write CSS-in-JS and create reusable, styled components.
 
-To use `styled-components` in this repository, follow the steps below:
+To use `styled-components` in this repository, follow the guide below:
 
-1. Install `styled-components` as a dependency:
+Import the necessary functions from styled-components and define your styled component. For example, to create a styled button:
 
-```bash
-npm install styled-components
-```
-
-2. Import the necessary functions from styled-components and define your styled component. For example, to create a styled button:
-
-```tsx
+```ts
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: white;
+  background-color: ${({ theme }) => theme.bg.light};
+  color: ${({ theme }) => theme.text.main};
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.secondary};
-  }
 `;
+```
 
+```tsx
 const MyComponent = () => {
   return (
     <>
