@@ -5,6 +5,7 @@ import { NotFound } from "../pages/NotFound/NotFound";
 import { RoutesConstants } from "../constants/routeConstants";
 import { Home } from "../pages/Home/Home";
 import { Login } from "../pages/Login/Login";
+import { Stats } from "../pages/Stats/Stats";
 
 export interface RoutePram extends Record<string, string | undefined> {}
 
@@ -21,6 +22,10 @@ export const AUTHENTICATED_ROUTES: PathRoute[] = [
   {
     path: RoutesConstants.PAYMENTS,
     element: <Payment />,
+  },
+  {
+    path: RoutesConstants.STATS,
+    element: <Stats />,
   },
 ];
 

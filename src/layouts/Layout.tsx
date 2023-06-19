@@ -13,11 +13,11 @@ import { Header } from "../components/Header/Header";
 import useScrollToTop from "../hooks/useScrollToTop";
 import Nav from "../components/Nav/Nav";
 
+const isAuthenticated = true;
+
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { pathname } = useLocation();
   useScrollToTop();
-
-  const isAuthenticated = true;
 
   const authenticated_route = !!matchRoutes(
     AUTHENTICATED_ROUTES as RouteObject[],

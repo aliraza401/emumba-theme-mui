@@ -13,6 +13,7 @@ This repository contains a React application that uses Material UI and Styled Co
 - [Responsiveness and Grid System](#responsiveness-and-grid-system)
 - [Accessibility](#accessibility)
 - [Code Examples and Samples](#code-examples-and-samples)
+- [Usage of Styled Components](#usage-of-styled-components)
 - [Contribution](#contribution)
 
 ## Getting Started
@@ -123,6 +124,49 @@ export default Layout;
 ```
 
 In this example, the Layout component takes children as a prop and renders them inside the main element. This allows you to wrap any component with the Layout component to include the header and navigation.
+
+## Usage of Styled Components
+
+This repository utilizes the power of `styled-components` for styling components. `styled-components` allows you to write CSS-in-JS and create reusable, styled components.
+
+To use `styled-components` in this repository, follow the steps below:
+
+1. Install `styled-components` as a dependency:
+
+```bash
+npm install styled-components
+```
+
+2. Import the necessary functions from styled-components and define your styled component. For example, to create a styled button:
+
+```tsx
+import styled from "styled-components";
+
+const StyledButton = styled.button`
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.secondary};
+  }
+`;
+
+const MyComponent = () => {
+  return (
+    <>
+      <StyledButton>Click Me</StyledButton>
+    </>
+  );
+};
+
+export default MyComponent;
+```
+
+In this example, we import styled-components and define a StyledButton component using the styled function. The StyledButton component is then used in the MyComponent component.
 
 ## Contribution
 

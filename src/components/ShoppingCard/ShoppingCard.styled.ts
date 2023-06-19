@@ -29,7 +29,7 @@ export const CardCompany = styled(Typography)`
   position: absolute;
   top: 20px;
   left: 20px;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 500;
 `;
 
@@ -47,11 +47,11 @@ export const CardDetails = styled.div`
 `;
 
 export const CardName = styled(Typography)`
-  font-size: 14px;
+  font-size: 0.875rem;
 `;
 
 export const CardNumber = styled(Typography)`
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 500;
 `;
 

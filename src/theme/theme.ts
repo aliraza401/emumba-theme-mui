@@ -27,6 +27,13 @@ const baseTheme = {
         },
       },
     },
+    MuiGrid: {
+      styleOverrides: {
+        item: {
+          borderRadius: "50px",
+        },
+      },
+    },
   },
   ...typography,
 };
@@ -37,7 +44,6 @@ const lightTheme = createTheme({
     ...baseTheme.palette,
     mode: "light",
   },
-  //custom theme variables => SC
   bg: {
     main: "#f8f8f8",
     light: "#ffffff",
@@ -54,7 +60,6 @@ const darkTheme = createTheme({
     ...baseTheme.palette,
     mode: "dark",
   },
-  //custom theme variables => SC
   bg: {
     main: "#141414",
     light: "#0d0d0d",

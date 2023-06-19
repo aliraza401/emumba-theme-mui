@@ -46,13 +46,13 @@ export const UserAvatar = styled(Avatar)`
 `;
 
 export const Heading = styled(Typography)`
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 500;
   color: ${({ theme }) => theme.text.main};
 `;
 
 export const SubHeading = styled(Typography)`
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
   color: ${({ theme }) => theme.text.light};
 `;
