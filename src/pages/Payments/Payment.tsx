@@ -10,7 +10,7 @@ export const Payment: React.FC<PaymentProps> = () => {
   return (
     <div>
       <StyledGrid container spacing={3}>
-        {cards.slice(0, 3).map((card) => (
+        {cards.map((card) => (
           <Grid item xs={12} sm={6} lg={4}>
             <ShoppingCard
               cardCompany={card.cardCompany}
