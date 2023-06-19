@@ -12,8 +12,8 @@ This repository contains a React application that uses Material UI and Styled Co
 - [Best Practices](#best-practices)
 - [Responsiveness and Grid System](#responsiveness-and-grid-system)
 - [Accessibility](#accessibility)
-- [Documentation](#documentation)
 - [Code Examples and Samples](#code-examples-and-samples)
+- [Contribution](#contribution)
 
 ## Getting Started
 
