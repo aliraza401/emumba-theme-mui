@@ -22,7 +22,7 @@ export const DataGridContainer = styled.div`
     background-color: ${({ theme }) => theme.bg.light};
     height: 70px;
     max-height: 70px !important;
-    border-radius: 10px;
+    border-radius: 0.65rem;
     margin-bottom: 30px;
     display: flex;
     align-items: center;

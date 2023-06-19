@@ -1,14 +1,7 @@
-import {
-  Box,
-  Link,
-  Drawer,
-  Typography,
-  Avatar,
-  Divider,
-  useTheme,
-} from "@mui/material";
+import { Box, Drawer, Divider, useTheme } from "@mui/material";
 import useResponsive from "../../hooks/useResponsve";
 import Image from "../Image/Image";
+import { Link } from "react-router-dom";
 
 import { NAV_WIDTH } from "../../constants";
 
@@ -22,6 +15,7 @@ import ChartImg from "./../../assets/images/chart.svg";
 import SettingImg from "./../../assets/images/Settings.svg";
 import { StyledNav } from "./Nav.styled";
 import { useState } from "react";
+import { RoutesConstants } from "../../constants/routeConstants";
 
 export default function Nav() {
   const isDesktop = useResponsive("up", "sm");
@@ -40,13 +34,17 @@ export default function Nav() {
 
         <Divider variant="middle" />
 
-        <Box sx={{ px: 2.5, py: 3 }} className={"text-center"}>
-          <Image src={UserImg} width={18} height={19} />
-        </Box>
+        <Link to={RoutesConstants.PAYMENTS}>
+          <Box sx={{ px: 2.5, py: 3 }} className={"text-center"}>
+            <Image src={UserImg} width={18} height={19} />
+          </Box>
+        </Link>
 
-        <Box sx={{ px: 2.5, py: 3 }} className={"text-center"}>
-          <Image src={CalenImg} width={21} height={21} />
-        </Box>
+        <Link to={RoutesConstants.STATS}>
+          <Box sx={{ px: 2.5, py: 3 }} className={"text-center"}>
+            <Image src={CalenImg} width={21} height={21} />
+          </Box>
+        </Link>
 
         <Box sx={{ px: 2.5, py: 3 }} className={"text-center"}>
           <Image src={StatsImg} width={22} height={22} />

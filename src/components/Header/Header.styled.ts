@@ -21,10 +21,11 @@ export const StyledToolbar = styled(Toolbar)`
   ${({ theme }) => `
     min-height: ${HEADER_MOBILE}px;
     padding-top: 10px;
-    // margin-left: ${NAV_WIDTH}px; 
     background-color: ${theme.bg.main} !important;
     @media (min-width: ${theme.breakpoints.values.sm}px) {
       min-height: ${HEADER_DESKTOP}px;
+      padding-left: 2rem;
+      padding-right: 2rem;
       padding: ${theme.spacing(0, 5)}px;
     }
   `}

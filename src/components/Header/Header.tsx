@@ -18,7 +18,7 @@ export const Header: React.FC<HeaderProps> = () => {
         </IconButton>
 
         <InputBase
-          placeholder="Search…"
+          placeholder="Search"
           inputProps={{ "aria-label": "search" }}
           sx={{ color: "text.primary", ml: 2, flex: 1 }}
         />

@@ -5,7 +5,7 @@ export const CardContainer = styled.div`
   height: 142px;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 1.875rem;
   background-color: ${({ theme }) => theme.bg.light};
   border-radius: 10px;
   margin-bottom: 40px;
@@ -53,7 +53,7 @@ export const ProgressContainer = styled.div`
 
 export const ProgressFill = styled.div<{ progress: number }>`
   width: ${({ progress }) => progress}%;
-  height: 6px;
+  height: 0.5rem;
   background-color: #3f8ae0;
   border-radius: 3px;
   background-color: ${({ color }) => color};

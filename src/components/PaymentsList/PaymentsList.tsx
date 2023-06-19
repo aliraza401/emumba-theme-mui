@@ -22,7 +22,7 @@ const columns: GridColDef[] = [
   {
     field: "user",
     headerName: "",
-    flex: 2, // 2 fractions of the grid space
+    flex: 2,
     renderCell: (params: GridRenderCellParams) => {
       const user: IUser = params.row as IUser;
       return (
@@ -39,7 +39,7 @@ const columns: GridColDef[] = [
   {
     field: "projects",
     headerName: "",
-    flex: 1, // 1 fraction of the grid space
+    flex: 1,
     renderCell: (params) => (
       <ColumnContainer>
         <Heading>{params.value}</Heading>
@@ -50,7 +50,7 @@ const columns: GridColDef[] = [
   {
     field: "finishedProjects",
     headerName: "",
-    flex: 1, // 1 fraction of the grid space
+    flex: 1,
     renderCell: (params) => (
       <ColumnContainer>
         <Heading>{params.value}</Heading>
@@ -61,7 +61,7 @@ const columns: GridColDef[] = [
   {
     field: "totalProfit",
     headerName: "",
-    flex: 1, // 1 fraction of the grid space
+    flex: 1,
     renderCell: (params) => (
       <ColumnContainer>
         <Heading>{params.value}</Heading>
@@ -72,7 +72,7 @@ const columns: GridColDef[] = [
   {
     field: "followers",
     headerName: "",
-    flex: 1, // 1 fraction of the grid space
+    flex: 1,
     renderCell: (params) => (
       <ColumnContainer>
         <Heading>{params.value}</Heading>
@@ -83,9 +83,9 @@ const columns: GridColDef[] = [
   {
     field: "action",
     headerName: "",
-    flex: 1, // 1 fraction of the grid space
+    flex: 1,
     renderCell: () => (
-      <div className="text-center" style={{width: "100%"}}>
+      <div className="text-center" style={{ width: "100%" }}>
         <Image src={ArrowRight} />
       </div>
     ),
