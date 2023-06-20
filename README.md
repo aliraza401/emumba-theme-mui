@@ -39,13 +39,58 @@ The routes for the application are defined in routes.ts. This file exports three
 
 ## Theming
 
-The application uses a light and dark theme, which can be switched. The themes are defined in theme.ts. This file exports two themes: lightTheme and darkTheme.
+The application uses Material UI for theming, which allows for a consistent design throughout the entire application. It also enables easy switching between light and dark themes. The themes are defined in theme.ts.
 
-The lightTheme and darkTheme are created using the createTheme function from Material UI. They both use a baseTheme, which includes a palette and some component style overrides. The lightTheme and darkTheme extend the baseTheme and add their own custom colors.
+A Material UI theme is an object with a structure that Material UI understands. When using the createTheme function from Material UI, you pass in an object that defines the colours, typography, spacing, and more.
 
-The application also uses a GlobalStyle component from Styled Components to apply some global styles. This includes setting the font family and background color.
+Here is a more detailed example of how to setup a theme:
 
-The typography of the application is defined in Typograghy.ts. This file exports a typography object that includes font weights, sizes, and line heights for different typography variants.
+```tsx
+import { createTheme } from "@material-ui/core/styles";
+
+const baseTheme = createTheme({
+  spacing: 4,
+  typography: {
+    fontFamily: "'Roboto', sans-serif",
+    h1: {
+      fontSize: "2rem",
+      fontWeight: "bold",
+    },
+    // additional typography settings...
+  },
+  // additional base theme settings...
+});
+
+const lightTheme = {
+  ...baseTheme,
+  palette: {
+    type: "light",
+    primary: {
+      main: "#3f51b5",
+    },
+    secondary: {
+      main: "#f50057",
+    },
+  },
+};
+
+const darkTheme = {
+  ...baseTheme,
+  palette: {
+    type: "dark",
+    primary: {
+      main: "#3f51b5",
+    },
+    secondary: {
+      main: "#f50057",
+    },
+  },
+};
+
+export { lightTheme, darkTheme };
+```
+
+In this example, we have a baseTheme that is extended by lightTheme and darkTheme with their specific palette settings. The palette object contains the colours for your theme. The primary and secondary objects within the palette object represent the primary and secondary colour palettes of your theme.
 
 ## Layout
 
@@ -127,26 +172,28 @@ In this example, the Layout component takes children as a prop and renders them 
 
 ## Usage of Styled Components
 
-This repository utilizes the power of `styled-components` for styling components. `styled-components` allows you to write CSS-in-JS and create reusable, styled components.
+Styled Components is a CSS-in-JS library that allows you to use component-level styles in your application, which can make managing styles much easier and more efficient.
 
-To use `styled-components` in this repository, follow the guide below:
+Styled Components uses tagged template literals to style components and removes the mapping between components and styles. This means that when you're defining your styles, you're actually creating a normal React component, that has your styles bound to it.
 
-Import the necessary functions from styled-components and define your styled component. For example, to create a styled button:
+Here's an extended example of how to define and use a styled component:
 
-```ts
+```tsx
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  background-color: ${({ theme }) => theme.bg.light};
-  color: ${({ theme }) => theme.text.main};
+  background-color: ${({ theme }) => theme.palette.primary.main};
+  color: ${({ theme }) => theme.palette.text.primary};
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-`;
-```
 
-```tsx
+  &:hover {
+    background-color: ${({ theme }) => theme.palette.primary.light};
+  }
+`;
+
 const MyComponent = () => {
   return (
     <>
@@ -158,7 +205,19 @@ const MyComponent = () => {
 export default MyComponent;
 ```
 
-In this example, we import styled-components and define a StyledButton component using the styled function. The StyledButton component is then used in the MyComponent component.
+In this example, we first create a StyledButton using the styled function from the styled-components library. This component can accept any prop and render it to the DOM, as well as pass it to the styled function. The styled function then returns a new component with the styles applied.
+
+## Theming with Styled Components
+
+Styled components can also access the application theme directly, through the use of the ThemeProvider wrapper. In your CardContainer styled-component, you're accessing your theme's colors:
+
+```tsx
+export const CardContainer = styled.div`
+  background-color: ${({ theme }) => theme.bg.light};
+`;
+```
+
+In this case, theme is automatically passed as a prop to any styled component that's a child of a ThemeProvider wrapper. You can define your application theme and wrap your application in this provider to give all your styled components access to these theme values. This can help to ensure consistent use of colors, spacing, and other design values across your application.
 
 ## Contribution
 
