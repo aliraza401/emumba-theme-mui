@@ -110,42 +110,6 @@ This segment focuses on the implementation of responsive design using MUI's Grid
 
 ## Code Examples and Samples
 
-### Theming
-
-In your application, theming is handled in theme.ts. Here's an example of how you might set up a light and dark theme using Material UI's createTheme function:
-
-```tsx
-import { createTheme } from "@material-ui/core/styles";
-
-const lightTheme = createTheme({
-  palette: {
-    type: "light",
-    primary: {
-      main: "#3f51b5",
-    },
-    secondary: {
-      main: "#f50057",
-    },
-  },
-});
-
-const darkTheme = createTheme({
-  palette: {
-    type: "dark",
-    primary: {
-      main: "#3f51b5",
-    },
-    secondary: {
-      main: "#f50057",
-    },
-  },
-});
-
-export { lightTheme, darkTheme };
-```
-
-In this example, both the light and dark themes use the same primary and secondary colors, but they have different background colors because of the type property.
-
 ### Layout
 
 In your application, the layout is defined in layout.ts. Here's an example of how you might set up a layout with a header, navigation, and main content area:
