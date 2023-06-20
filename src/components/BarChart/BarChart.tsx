@@ -12,11 +12,14 @@ import {
 
 import { barChartData } from "../../constants";
 import { ChartContainer } from "./BarChart.styled";
+import useResponsive from "../../hooks/useResponsve";
 
 const BarChart: FC<BarChartProps> = () => {
+  const isMobile = useResponsive("down", "md");
+
   return (
     <ChartContainer>
-      <ResponsiveContainer>
+      <ResponsiveContainer minWidth={0}>
         <BChart
           data={barChartData.data}
           margin={{
@@ -25,7 +28,7 @@ const BarChart: FC<BarChartProps> = () => {
             left: 20,
             bottom: 5,
           }}
-          barSize={35}
+          barSize={isMobile ? 15 : 35}
           barGap={10}
         >
           <XAxis

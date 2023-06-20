@@ -12,8 +12,8 @@ export const CardContainer = styled.div`
 `;
 
 export const IconContainer = styled.div`
-  width: 90px;
-  height: 90px;
+  width: ${({ theme }) => (theme.breakpoints.up("sm") ? "90px" : "60px")};
+  height: ${({ theme }) => (theme.breakpoints.up("sm") ? "90px" : "60px")};
   display: flex;
   justify-content: center;
   align-items: center;
