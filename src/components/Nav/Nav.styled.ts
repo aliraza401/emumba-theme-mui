@@ -21,3 +21,10 @@ export const StyledBox = styled(Box)`
   /* color: ${({ theme }) =>
     theme.palette.mode === "dark" ? theme.text.light : theme.text.main}; */
 `;
+
+export const StyledLogoBox = styled(Box)`
+  cursor: pointer;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+`;

@@ -13,7 +13,7 @@ import StatsImg from "./../../assets/images/Stats.svg";
 import FireImg from "./../../assets/images/Fire.svg";
 import ChartImg from "./../../assets/images/chart.svg";
 import SettingImg from "./../../assets/images/Settings.svg";
-import { StyledBox, StyledNav } from "./Nav.styled";
+import { StyledBox, StyledLogoBox, StyledNav } from "./Nav.styled";
 import { useState } from "react";
 import { RoutesConstants } from "../../constants/routeConstants";
 import { useDarkMode } from "../../context/darkMode";
@@ -32,9 +32,9 @@ export default function Nav() {
   const renderContent = (
     <StyledNav isOpened={openNav}>
       <Box>
-        <Box sx={{ px: 2.5, py: 3 }}>
+        <StyledLogoBox sx={{ px: 2.5, py: 3 }}>
           <Image src={LogoDark} width={36} height={36} />
-        </Box>
+        </StyledLogoBox>
 
         <Divider variant="middle" />
 

@@ -98,8 +98,6 @@ const typography: Typography = {
     fontWeight: 300,
     lineHeight: 1,
     fontSize: pxToRem(14),
-    // color: (theme: Theme) => theme.text.light || "black",
-    // color: ({ theme }) => theme.text.light ,
   },
   // subtitle2: {
   //   fontWeight: 600,
