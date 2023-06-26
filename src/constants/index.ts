@@ -79,7 +79,7 @@ export const users: IUser[] = [
 
 export const cards = [
   {
-    cardCompany: "MasterCard",
+    cardCompany: "Sadapay",
     name: "Henry Richardson",
     number: "4567  ****  ****  4501",
     expDate: "04 / 23",
@@ -95,7 +95,7 @@ export const cards = [
     cardColor: "#FF3A29",
   },
   {
-    cardCompany: "MasterCard",
+    cardCompany: "Pakpay",
     name: "Jane Smith",
     number: "5678  ****  ****  1234",
     expDate: "07 / 24",

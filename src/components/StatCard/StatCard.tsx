@@ -24,8 +24,8 @@ const StatCard: React.FC<StatCardProps> = ({
         <Icon src={icon} alt={name} />
       </IconContainer>
       <ContentContainer>
-        <Name>{name}</Name>
-        <TagLine>{tagLine}</TagLine>
+        <Name variant="h2">{name}</Name>
+        <TagLine variant="subtitle1">{tagLine}</TagLine>
         <ProgressContainer color={color}>
           <ProgressFill progress={progress} color={color} />
         </ProgressContainer>

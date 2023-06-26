@@ -3,8 +3,6 @@ import { Card, Typography } from "@mui/material";
 
 export const StyledCard = styled(Card)<{ cardColor: string }>`
   width: 100%;
-  max-width: 448px; // approx dimensions of a credit card
-  height: 260px; // approx dimensions of a credit card
   background: ${(props) => props.cardColor};
   border-radius: 10px;
   color: white;
@@ -16,6 +14,13 @@ export const StyledCard = styled(Card)<{ cardColor: string }>`
   position: relative;
   overflow: hidden;
   margin: auto;
+
+  max-width: 100%;
+  height: 220px;
+  ${({ theme }) => theme.breakpoints.up("sm")} {
+    max-width: 448px;
+    height: 260px;
+  }
 `;
 
 export const CardLogo = styled.img`
@@ -29,8 +34,6 @@ export const CardCompany = styled(Typography)`
   position: absolute;
   top: 20px;
   left: 20px;
-  font-size: 1.375rem;
-  font-weight: 500;
 `;
 
 export const WifiIcon = styled.img`
@@ -47,19 +50,15 @@ export const CardDetails = styled.div`
 `;
 
 export const CardName = styled(Typography)`
-  font-size: 0.875rem;
+  color: white;
 `;
 
-export const CardNumber = styled(Typography)`
-  font-size: 1.375rem;
-  font-weight: 500;
-`;
+export const CardNumber = styled(Typography)``;
 
 export const CardExpiry = styled(Typography)`
   position: absolute;
   bottom: 20px;
   left: 20px;
-  font-size: 20px;
 `;
 
 export const CardMasterLogo = styled.img`

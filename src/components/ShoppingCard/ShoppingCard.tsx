@@ -23,13 +23,13 @@ const ShoppingCard: React.FC<ShoppingCardProps> = ({
 }) => {
   return (
     <StyledCard cardColor={cardColor}>
-      <CardCompany>{cardCompany}</CardCompany>
+      <CardCompany variant="h2">{cardCompany}</CardCompany>
       <WifiIcon src={wifiLogo} alt="Wifi Symbol" />
       <CardDetails>
-        <CardName>{name}</CardName>
-        <CardNumber>{number}</CardNumber>
+        <CardName variant="subtitle1">{name}</CardName>
+        <CardNumber variant="h2">{number}</CardNumber>
       </CardDetails>
-      <CardExpiry>{expDate}</CardExpiry>
+      <CardExpiry variant="h2">{expDate}</CardExpiry>
       <CardMasterLogo src={mastercardLogo} alt="MasterCard Logo" />
     </StyledCard>
   );

@@ -3,10 +3,10 @@ import { IUser } from "./PaymentsList.interface";
 import {
   TableContainer,
   Table,
-  TableHead,
   TableBody,
   TableRow,
   TableCell,
+  Typography,
 } from "@mui/material";
 
 import ArrowRight from "./../../assets/images/ArrowRight.svg";
@@ -14,8 +14,6 @@ import ArrowRight from "./../../assets/images/ArrowRight.svg";
 import {
   DataGridContainer,
   ColumnContainer,
-  Heading,
-  SubHeading,
   UserAvatar,
 } from "./PaymentsList.styled";
 import Image from "../Image/Image";
@@ -29,15 +27,6 @@ const PaymentsList: React.FC<PaymentsListProps> = ({ users }) => {
     <DataGridContainer>
       <TableContainer component={DataGridContainer}>
         <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell></TableCell>
-              <TableCell></TableCell>
-              <TableCell></TableCell>
-              <TableCell></TableCell>
-              <TableCell></TableCell>
-            </TableRow>
-          </TableHead>
           <TableBody>
             {users.map((user) => (
               <TableRow key={user.id}>
@@ -45,33 +34,39 @@ const PaymentsList: React.FC<PaymentsListProps> = ({ users }) => {
                   <div className="d-flex">
                     <UserAvatar src={user.avatar} />
                     <ColumnContainer>
-                      <Heading>{user.name}</Heading>
-                      <SubHeading>{user.designation}</SubHeading>
+                      <Typography variant="h2">{user.name}</Typography>
+                      <Typography variant="subtitle1">
+                        {user.designation}
+                      </Typography>
                     </ColumnContainer>
                   </div>
                 </TableCell>
                 <TableCell>
                   <ColumnContainer>
-                    <Heading>{user.projects}</Heading>
-                    <SubHeading>Projects</SubHeading>
+                    <Typography variant="h2">{user.projects}</Typography>
+                    <Typography variant="subtitle1">Projects</Typography>
                   </ColumnContainer>
                 </TableCell>
                 <TableCell>
                   <ColumnContainer>
-                    <Heading>{user.finishedProjects}</Heading>
-                    <SubHeading>Finished Projects</SubHeading>
+                    <Typography variant="h2">
+                      {user.finishedProjects}
+                    </Typography>
+                    <Typography variant="subtitle1">
+                      Finished Projects
+                    </Typography>
                   </ColumnContainer>
                 </TableCell>
                 <TableCell>
                   <ColumnContainer>
-                    <Heading>{user.totalProfit}</Heading>
-                    <SubHeading>Total Profit</SubHeading>
+                    <Typography variant="h2">{user.totalProfit}</Typography>
+                    <Typography variant="subtitle1">Total Profit</Typography>
                   </ColumnContainer>
                 </TableCell>
                 <TableCell>
                   <ColumnContainer>
-                    <Heading>{user.followers}</Heading>
-                    <SubHeading>Followers</SubHeading>
+                    <Typography variant="h2">{user.followers}</Typography>
+                    <Typography variant="subtitle1">Followers</Typography>
                   </ColumnContainer>
                 </TableCell>
                 <TableCell>

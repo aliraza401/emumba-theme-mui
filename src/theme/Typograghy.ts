@@ -1,9 +1,7 @@
+import { TypographyStyleOptions } from "@mui/material/styles/createTypography";
+
 export function remToPx(value: number): number {
   return Math.round(parseFloat(String(value)) * 16);
-}
-
-export function pxToRem(value: number): string {
-  return `${value / 16}rem`;
 }
 
 interface ResponsiveFontSizes {
@@ -11,6 +9,8 @@ interface ResponsiveFontSizes {
   md: number;
   lg: number;
 }
+
+export const pxToRem = (value: number): string => `${value / 16}rem`;
 
 export function responsiveFontSizes({ sm, md, lg }: ResponsiveFontSizes) {
   return {
@@ -28,26 +28,18 @@ export function responsiveFontSizes({ sm, md, lg }: ResponsiveFontSizes) {
 
 const FONT_PRIMARY = "DM Sans";
 
-interface FontStyle {
-  fontWeight?: number;
-  lineHeight: number;
-  fontSize: string;
-  textTransform?: string;
-  responsiveFontSizes?: ReturnType<typeof responsiveFontSizes>;
-}
-
 interface Typography {
   fontFamily: string;
   fontWeightRegular: number;
   fontWeightMedium: number;
   fontWeightBold: number;
-  h1: FontStyle;
-  h2: FontStyle;
-  h3: FontStyle;
-  h4: FontStyle;
-  h5: FontStyle;
-  h6: FontStyle;
-  // subtitle1: FontStyle;
+  h1: TypographyStyleOptions;
+  h2: TypographyStyleOptions;
+  h3: TypographyStyleOptions;
+  h4: TypographyStyleOptions;
+  h5: TypographyStyleOptions;
+  h6: TypographyStyleOptions;
+  subtitle1: TypographyStyleOptions;
   // subtitle2: FontStyle;
   // body1: FontStyle;
   // body2: FontStyle;
@@ -64,16 +56,16 @@ const typography: Typography = {
   h1: {
     fontWeight: 800,
     lineHeight: 80 / 64,
-    fontSize: pxToRem(40),
+    fontSize: pxToRem(28),
     textTransform: "none",
-    ...responsiveFontSizes({ sm: 52, md: 58, lg: 64 }),
+    ...responsiveFontSizes({ sm: 28, md: 38, lg: 44 }),
   },
   h2: {
-    fontWeight: 800,
+    fontWeight: 500,
     lineHeight: 64 / 48,
-    fontSize: pxToRem(32),
+    fontSize: pxToRem(18),
     textTransform: "none",
-    ...responsiveFontSizes({ sm: 40, md: 44, lg: 48 }),
+    ...responsiveFontSizes({ sm: 18, md: 20, lg: 22 }),
   },
   h3: {
     fontWeight: 700,
@@ -102,11 +94,13 @@ const typography: Typography = {
     textTransform: "none",
     ...responsiveFontSizes({ sm: 18, md: 18, lg: 18 }),
   },
-  // subtitle1: {
-  //   fontWeight: 600,
-  //   lineHeight: 1.5,
-  //   fontSize: pxToRem(16),
-  // },
+  subtitle1: {
+    fontWeight: 300,
+    lineHeight: 1,
+    fontSize: pxToRem(14),
+    // color: (theme: Theme) => theme.text.light || "black",
+    // color: ({ theme }) => theme.text.light ,
+  },
   // subtitle2: {
   //   fontWeight: 600,
   //   lineHeight: 22 / 14,

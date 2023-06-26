@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
@@ -12,13 +13,18 @@ export const CardContainer = styled.div`
 `;
 
 export const IconContainer = styled.div`
-  width: ${({ theme }) => (theme.breakpoints.up("sm") ? "90px" : "60px")};
-  height: ${({ theme }) => (theme.breakpoints.up("sm") ? "90px" : "60px")};
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   background-color: ${({ color }) => `${color}80`};
+
+  width: 60px;
+  height: 60px;
+  ${({ theme }) => theme.breakpoints.up("sm")} {
+    width: 90px;
+    height: 90px;
+  }
 `;
 
 export const Icon = styled.img`
@@ -32,16 +38,12 @@ export const ContentContainer = styled.div`
   margin-left: 0.875rem;
 `;
 
-export const Name = styled.div`
-  font-weight: 500;
+export const Name = styled(Typography)`
   line-height: 1;
-  font-size: 1.375rem;
   margin-bottom: 10px;
 `;
 
-export const TagLine = styled.div`
-  font-size: 0.875rem;
-  color: #888888;
+export const TagLine = styled(Typography)`
   margin-bottom: 20px;
 `;
 
