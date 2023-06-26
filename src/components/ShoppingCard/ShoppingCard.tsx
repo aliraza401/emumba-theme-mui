@@ -2,7 +2,7 @@ import React from "react";
 import { ShoppingCardProps } from "./ShoppingCard.interface";
 import {
   StyledCard,
-  CardLogo,
+  // CardLogo,
   CardCompany,
   WifiIcon,
   CardDetails,

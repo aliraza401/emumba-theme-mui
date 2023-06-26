@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NAV_WIDTH } from "../../constants";
-import { Settings } from "@mui/icons-material";
+import { Box } from "@mui/material";
 
 export const StyledNav = styled.nav<{ isOpened: boolean }>`
   /* width: ${NAV_WIDTH}px; */
@@ -14,6 +14,10 @@ export const StyledNav = styled.nav<{ isOpened: boolean }>`
   /* margin-left: ${({ isOpened }) => (isOpened ? `${NAV_WIDTH}px` : 0)}; */
 `;
 
-export const SettingsIcon = styled(Settings)`
-  color: "#ccc";
+export const StyledBox = styled(Box)`
+  text-align: center;
+  cursor: pointer;
+  color: ${({ theme }) => theme.text.light};
+  /* color: ${({ theme }) =>
+    theme.palette.mode === "dark" ? theme.text.light : theme.text.main}; */
 `;

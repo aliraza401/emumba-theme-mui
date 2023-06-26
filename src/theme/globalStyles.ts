@@ -13,6 +13,9 @@ const GlobalStyle = createGlobalStyle`
   .text-center {
     text-align: center;
   }
+  .d-flex {
+    display: flex;
+  }
 `;
 
 export default GlobalStyle;

@@ -22,7 +22,7 @@ export const users: IUser[] = [
     designation: "Developer",
     projects: 5,
     finishedProjects: 3,
-    totalProfit: 2000,
+    totalProfit: 390.99,
     followers: 150,
   },
   {
@@ -32,7 +32,7 @@ export const users: IUser[] = [
     designation: "Designer",
     projects: 7,
     finishedProjects: 4,
-    totalProfit: 3000,
+    totalProfit: 390.99,
     followers: 200,
   },
   {
@@ -42,7 +42,7 @@ export const users: IUser[] = [
     designation: "Developer",
     projects: 5,
     finishedProjects: 3,
-    totalProfit: 2000,
+    totalProfit: 390.99,
     followers: 150,
   },
   {
@@ -52,7 +52,7 @@ export const users: IUser[] = [
     designation: "Designer",
     projects: 7,
     finishedProjects: 4,
-    totalProfit: 3000,
+    totalProfit: 390.99,
     followers: 200,
   },
   {
@@ -62,7 +62,7 @@ export const users: IUser[] = [
     designation: "Developer",
     projects: 5,
     finishedProjects: 3,
-    totalProfit: 2000,
+    totalProfit: 390.99,
     followers: 150,
   },
   {
@@ -72,7 +72,7 @@ export const users: IUser[] = [
     designation: "Designer",
     projects: 7,
     finishedProjects: 4,
-    totalProfit: 3000,
+    totalProfit: 390.99,
     followers: 200,
   },
 ];

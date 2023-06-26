@@ -10,28 +10,31 @@ export const DataGridContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 500px;
-  margin-top: 5rem;
+  height: 600px;
+  margin-top: 2rem;
+  border-radius: 0.65rem;
+
   .MuiDataGrid-root {
     border: none;
   }
   .MuiDataGrid-columnHeaders {
     display: none;
   }
-  .MuiDataGrid-row {
+  .MuiTableRow-root {
     background-color: ${({ theme }) => theme.bg.light};
     height: 70px;
     max-height: 70px !important;
     border-radius: 0.65rem;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
   }
-  .MuiDataGrid-cell {
+  .MuiTableCell-root {
     border-bottom: none;
   }
-  .MuiDataGrid-columnsContainer {
+  .MuiTableHead-root {
     display: none;
+  }
+
+  .MuiTableBody-root .MuiTableRow-root:not(:last-child) {
+    margin-bottom: 30px;
   }
 `;
 

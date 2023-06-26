@@ -1,11 +1,17 @@
 import React from "react";
 import { IUser } from "./PaymentsList.interface";
-import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
+import {
+  TableContainer,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+} from "@mui/material";
 
 import ArrowRight from "./../../assets/images/ArrowRight.svg";
 
 import {
-  StyledArrowIcon,
   DataGridContainer,
   ColumnContainer,
   Heading,
@@ -18,84 +24,66 @@ interface PaymentsListProps {
   users: IUser[];
 }
 
-const columns: GridColDef[] = [
-  {
-    field: "user",
-    headerName: "",
-    flex: 2,
-    renderCell: (params: GridRenderCellParams) => {
-      const user: IUser = params.row as IUser;
-      return (
-        <>
-          <UserAvatar src={user.avatar} />
-          <ColumnContainer>
-            <Heading>{user.name}</Heading>
-            <SubHeading>{user.designation}</SubHeading>
-          </ColumnContainer>
-        </>
-      );
-    },
-  },
-  {
-    field: "projects",
-    headerName: "",
-    flex: 1,
-    renderCell: (params) => (
-      <ColumnContainer>
-        <Heading>{params.value}</Heading>
-        <SubHeading>Projects</SubHeading>
-      </ColumnContainer>
-    ),
-  },
-  {
-    field: "finishedProjects",
-    headerName: "",
-    flex: 1,
-    renderCell: (params) => (
-      <ColumnContainer>
-        <Heading>{params.value}</Heading>
-        <SubHeading>Finished</SubHeading>
-      </ColumnContainer>
-    ),
-  },
-  {
-    field: "totalProfit",
-    headerName: "",
-    flex: 1,
-    renderCell: (params) => (
-      <ColumnContainer>
-        <Heading>{params.value}</Heading>
-        <SubHeading>Profit</SubHeading>
-      </ColumnContainer>
-    ),
-  },
-  {
-    field: "followers",
-    headerName: "",
-    flex: 1,
-    renderCell: (params) => (
-      <ColumnContainer>
-        <Heading>{params.value}</Heading>
-        <SubHeading>Followers</SubHeading>
-      </ColumnContainer>
-    ),
-  },
-  {
-    field: "action",
-    headerName: "",
-    flex: 1,
-    renderCell: () => (
-      <div className="text-center" style={{ width: "100%" }}>
-        <Image src={ArrowRight} />
-      </div>
-    ),
-  },
-];
-
 const PaymentsList: React.FC<PaymentsListProps> = ({ users }) => {
   return (
     <DataGridContainer>
-      <DataGrid rows={users} columns={columns} hideFooter autoHeight />
+      <TableContainer component={DataGridContainer}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {users.map((user) => (
+              <TableRow key={user.id}>
+                <TableCell>
+                  <div className="d-flex">
+                    <UserAvatar src={user.avatar} />
+                    <ColumnContainer>
+                      <Heading>{user.name}</Heading>
+                      <SubHeading>{user.designation}</SubHeading>
+                    </ColumnContainer>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <ColumnContainer>
+                    <Heading>{user.projects}</Heading>
+                    <SubHeading>Projects</SubHeading>
+                  </ColumnContainer>
+                </TableCell>
+                <TableCell>
+                  <ColumnContainer>
+                    <Heading>{user.finishedProjects}</Heading>
+                    <SubHeading>Finished Projects</SubHeading>
+                  </ColumnContainer>
+                </TableCell>
+                <TableCell>
+                  <ColumnContainer>
+                    <Heading>{user.totalProfit}</Heading>
+                    <SubHeading>Total Profit</SubHeading>
+                  </ColumnContainer>
+                </TableCell>
+                <TableCell>
+                  <ColumnContainer>
+                    <Heading>{user.followers}</Heading>
+                    <SubHeading>Followers</SubHeading>
+                  </ColumnContainer>
+                </TableCell>
+                <TableCell>
+                  <div className="text-center" style={{ width: "100%" }}>
+                    <Image src={ArrowRight} />
+                  </div>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </DataGridContainer>
   );
 };
